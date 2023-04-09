@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vbook/app/bloc/app_bloc.dart';
+import 'package:vbook/ui/account/widgets/setting/setting.dart';
 
 import 'bloc/account_bloc.dart';
 
@@ -187,7 +188,11 @@ class AccountPage extends StatelessWidget {
                 ),
                 ListTile(
                   title: TextButton.icon(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => SettingAccount()),
+                      );
+                    },
                     icon: Icon(
                       Icons.settings_outlined,
                       color: Colors.black,

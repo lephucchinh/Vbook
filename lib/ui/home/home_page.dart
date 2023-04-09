@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../account/account_page.dart';
 import 'widgets/home_body.dart';
 
 class HomePage extends StatelessWidget {
@@ -13,20 +14,19 @@ class HomePage extends StatelessWidget {
         appBar: AppBar(
           backgroundColor: Colors.black12,
           elevation: 0,
-          leading: InkWell(
-              onTap: () {},
-              child: const CircleAvatar(
-                radius: 25,
+          leading: IconButton(
+              onPressed: () {},
+              icon: const CircleAvatar(
                 backgroundImage: AssetImage("assets/images/8-1626444967.jpg"),
               ),
             ),
           title: const TabBar(
             tabs: [
               Tab(
-                  child: const Text("Kệ sách",style: TextStyle(color: Colors.black),)
+                  child: Text("Kệ sách",style: TextStyle(color: Colors.black),)
               ),
               Tab(
-                  child: const Text("Lịch sử",style: TextStyle(color: Colors.black),)
+                  child: Text("Lịch sử",style: TextStyle(color: Colors.black),)
               ),
             ],
           ),
@@ -55,10 +55,10 @@ class HomePage extends StatelessWidget {
         bottomNavigationBar: NavigationBar(
           onDestinationSelected: (index) {
             if (index == 3) {
-              // Navigator.push(
-              //   context,
-              //   MaterialPageRoute(builder: (context) => const SettingPage()),
-              // );
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) =>  const AccountPage()),
+              );
             }
           },
           destinations: const [

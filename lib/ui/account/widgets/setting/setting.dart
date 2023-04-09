@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class SettingAccount extends StatefulWidget {
-
   const SettingAccount({Key? key}) : super(key: key);
 
   @override
@@ -10,30 +9,46 @@ class SettingAccount extends StatefulWidget {
 }
 
 class _SettingAccountState extends State<SettingAccount> {
+  final colors = [
+    Colors.grey,
+    Colors.white,
+    Colors.red,
+    Colors.purple,
+    Colors.blue,
+    Colors.yellow,
+    Colors.deepOrangeAccent
+  ];
+
+  int selectedColor = 0;
+
   @override
   bool light = true;
+
   Widget build(BuildContext context) {
-
-
     return Scaffold(
-
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
         title: const Text(
           "Cài đặt",
-          style: TextStyle(color: Colors.black,fontWeight: FontWeight.w900,fontSize: 15),
+          style: TextStyle(
+              color: Colors.black, fontWeight: FontWeight.w900, fontSize: 15),
         ),
       ),
       body: Center(
         child: ListView(
           children: [
-             const ListTile(
-              leading:  Text("CHUNG",
-              style: TextStyle(fontWeight: FontWeight.w900,fontSize: 15,),),
+            const ListTile(
+              leading: Text(
+                "CHUNG",
+                style: TextStyle(
+                  fontWeight: FontWeight.w900,
+                  fontSize: 15,
+                ),
+              ),
             ),
             const SizedBox(
-               child: Divider(
+              child: Divider(
                 height: 1,
                 thickness: 2,
                 indent: 17,
@@ -42,204 +57,105 @@ class _SettingAccountState extends State<SettingAccount> {
               ),
             ),
             const ListTile(
-              title: Text("chủ đề",
-                style: TextStyle(color: Colors.black,fontWeight: FontWeight.w400,fontSize: 15),
+              title: Text(
+                "chủ đề",
+                style: TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.w400,
+                    fontSize: 15),
               ),
             ),
             Container(
-              height: 70,
-              child: ListView(
-                scrollDirection: Axis.horizontal,
-                children: <Widget>[
-                  ElevatedButton(
-                    child: Text(""),
-                    style: ButtonStyle(
-                        backgroundColor:
-                            MaterialStateProperty.all<Color>(Colors.grey),
-                        shape: MaterialStateProperty.all<OutlinedBorder>(
-                          CircleBorder(),
-                        )),
-                    onPressed: () {},
+                height: 70,
+                child: ListView.separated(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: colors.length,
+                  itemBuilder: (context, index) => ElevatedButton(
+                    child: selectedColor == index
+                        ? Icon(Icons.check_box_outlined)
+                        : SizedBox.shrink(),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: colors[index],
+                      shape: CircleBorder(),
+                    ),
+                    onPressed: () {
+                      setState(() {
+                        selectedColor = index;
+                      });
+                    },
                   ),
-                  ElevatedButton(
-                    child: Text(""),
-                    style: ButtonStyle(
-                        backgroundColor:
-                        MaterialStateProperty.all<Color>(Colors.white),
-                        shape: MaterialStateProperty.all<OutlinedBorder>(
-                          CircleBorder(),
-                        )),
-                    onPressed: () {},
-                  ),
-                  ElevatedButton(
-                    child: Text(""),
-                    style: ButtonStyle(
-                        backgroundColor:
-                        MaterialStateProperty.all<Color>(Colors.red),
-                        shape: MaterialStateProperty.all<OutlinedBorder>(
-                          CircleBorder(),
-                        )),
-                    onPressed: () {},
-                  ),
-                  ElevatedButton(
-                    child: Text(""),
-                    style: ButtonStyle(
-                        backgroundColor:
-                        MaterialStateProperty.all<Color>(Colors.purple),
-                        shape: MaterialStateProperty.all<OutlinedBorder>(
-                          CircleBorder(),
-                        )),
-                    onPressed: () {},
-                  ),
-                  ElevatedButton(
-                    child: Text(""),
-                    style: ButtonStyle(
-                        backgroundColor:
-                        MaterialStateProperty.all<Color>(Colors.blueAccent),
-                        shape: MaterialStateProperty.all<OutlinedBorder>(
-                          CircleBorder(),
-                        )),
-                    onPressed: () {},
-                  ),
-                  ElevatedButton(
-                    child: Text(""),
-                    style: ButtonStyle(
-                        backgroundColor:
-                        MaterialStateProperty.all<Color>(Colors.orange),
-                        shape: MaterialStateProperty.all<OutlinedBorder>(
-                          CircleBorder(),
-                        )),
-                    onPressed: () {},
-                  ),
-                  ElevatedButton(
-                    child: Text(""),
-                    style: ButtonStyle(
-                        backgroundColor:
-                        MaterialStateProperty.all<Color>(Colors.grey),
-                        shape: MaterialStateProperty.all<OutlinedBorder>(
-                          CircleBorder(),
-                        )),
-                    onPressed: () {},
-                  ),
-                  ElevatedButton(
-                    child: Text(""),
-                    style: ButtonStyle(
-                        backgroundColor:
-                        MaterialStateProperty.all<Color>(Colors.grey),
-                        shape: MaterialStateProperty.all<OutlinedBorder>(
-                          CircleBorder(),
-                        )),
-                    onPressed: () {},
-                  ),
-                  ElevatedButton(
-                    child: Text(""),
-                    style: ButtonStyle(
-                        backgroundColor:
-                        MaterialStateProperty.all<Color>(Colors.grey),
-                        shape: MaterialStateProperty.all<OutlinedBorder>(
-                          CircleBorder(),
-                        )),
-                    onPressed: () {},
-                  ),
-                  ElevatedButton(
-                    child: Text(""),
-                    style: ButtonStyle(
-                        backgroundColor:
-                        MaterialStateProperty.all<Color>(Colors.grey),
-                        shape: MaterialStateProperty.all<OutlinedBorder>(
-                          CircleBorder(),
-                        )),
-                    onPressed: () {},
-                  ),
-                  ElevatedButton(
-                    child: Text(""),
-                    style: ButtonStyle(
-                        backgroundColor:
-                        MaterialStateProperty.all<Color>(Colors.grey),
-                        shape: MaterialStateProperty.all<OutlinedBorder>(
-                          CircleBorder(),
-                        )),
-                    onPressed: () {},
-                  ),
-                  ElevatedButton(
-                    child: Text(""),
-                    style: ButtonStyle(
-                        backgroundColor:
-                        MaterialStateProperty.all<Color>(Colors.grey),
-                        shape: MaterialStateProperty.all<OutlinedBorder>(
-                          CircleBorder(),
-                        )),
-                    onPressed: () {},
-                  ),
-
-                ],
-              ),
-            ),
+                  separatorBuilder: (context, index) => SizedBox(width: 5),
+                )),
             ListTile(
               title: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
+                children: const [
                   Text("Chủ đề tối"),
-                  Text("Tối",
-                  style: TextStyle(
-                    fontSize: 12),),
+                  Text(
+                    "Tối",
+                    style: TextStyle(fontSize: 12),
+                  ),
                 ],
               ),
-              trailing: Icon(Icons.navigate_next),
+              trailing: const Icon(Icons.navigate_next),
             ),
             ListTile(
               title: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
+                children: const [
                   Text("Ngôn ngữ"),
-                  Text("Theo hệ thống",style: TextStyle(
-                      fontSize: 12),),
+                  Text(
+                    "Theo hệ thống",
+                    style: TextStyle(fontSize: 12),
+                  ),
                 ],
               ),
-              trailing: Icon(Icons.navigate_next),
+              trailing: const Icon(Icons.navigate_next),
             ),
             ListTile(
               title: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
+                children: const [
                   Text("Phông chữ"),
-                  Text("Nunito",style: TextStyle(
-                      fontSize: 12),),
+                  Text(
+                    "Nunito",
+                    style: TextStyle(fontSize: 12),
+                  ),
                 ],
               ),
-              trailing: Icon(Icons.navigate_next),
+              trailing: const Icon(Icons.navigate_next),
             ),
+            ListTile(
+                title: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: const [
+                    Text("Tự động mở truyện vừa đọc"),
+                  ],
+                ),
+                trailing: Switch(
+                    value: light,
+                    onChanged: (bool value) {
+                      setState(() {
+                        light = value;
+                      });
+                    })),
             ListTile(
               title: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text("Tự động mở truyện vừa đọc"),
-                ],
-              ),
-              trailing: Switch(
-                  value: light,
-                  onChanged: (bool value) {
-                setState(() {
-                  light = value;
-                });
-              })
-            ),
-            ListTile(
-              title: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
+                children: const [
                   Text("Cập nhật chương mới"),
-                  Text("không kiểm tra",
-                    style: TextStyle(
-                      fontSize: 12),),
+                  Text(
+                    "không kiểm tra",
+                    style: TextStyle(fontSize: 12),
+                  ),
                 ],
               ),
-              trailing: Icon(Icons.navigate_next),
+              trailing: const Icon(Icons.navigate_next),
             ),
             ListTile(
               title: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
+                children: const [
                   Text("Làm mờ ảnh bìa truyện nsfw"),
                 ],
               ),
@@ -252,8 +168,13 @@ class _SettingAccountState extends State<SettingAccount> {
                   }),
             ),
             const ListTile(
-              title:  Text("KẾT NỐI",
-                style: TextStyle(fontWeight: FontWeight.w900,fontSize: 15,),),
+              title: Text(
+                "KẾT NỐI",
+                style: TextStyle(
+                  fontWeight: FontWeight.w900,
+                  fontSize: 15,
+                ),
+              ),
             ),
             const SizedBox(
               child: Divider(
@@ -267,54 +188,63 @@ class _SettingAccountState extends State<SettingAccount> {
             ListTile(
               title: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
+                children: const [
                   Text("Thời gian nghỉ"),
-                  Text("100ms",
-                    style: TextStyle(
-                        fontSize: 12),),
+                  Text(
+                    "100ms",
+                    style: TextStyle(fontSize: 12),
+                  ),
                 ],
               ),
-              trailing: Icon(Icons.navigate_next),
+              trailing: const Icon(Icons.navigate_next),
             ),
             ListTile(
               title: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
+                children: const [
                   Text("Số luồng tải xuống"),
-                  Text("2 luồng",
-                    style: TextStyle(
-                        fontSize: 12),),
+                  Text(
+                    "2 luồng",
+                    style: TextStyle(fontSize: 12),
+                  ),
                 ],
               ),
-              trailing: Icon(Icons.navigate_next),
+              trailing: const Icon(Icons.navigate_next),
             ),
             ListTile(
               title: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
+                children: const [
                   Text("Tải lại khi bị lỗi"),
-                  Text("3",
-                    style: TextStyle(
-                        fontSize: 12),),
+                  Text(
+                    "3",
+                    style: TextStyle(fontSize: 12),
+                  ),
                 ],
               ),
-              trailing: Icon(Icons.navigate_next),
+              trailing: const Icon(Icons.navigate_next),
             ),
             ListTile(
               title: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
+                children: const [
                   Text("DNS over HTTPS"),
-                  Text("không",
-                    style: TextStyle(
-                        fontSize: 12),),
+                  Text(
+                    "không",
+                    style: TextStyle(fontSize: 12),
+                  ),
                 ],
               ),
-              trailing: Icon(Icons.navigate_next),
+              trailing: const Icon(Icons.navigate_next),
             ),
             const ListTile(
-              title:  Text("DỊCH",
-                style: TextStyle(fontWeight: FontWeight.w900,fontSize: 15,),),
+              title: Text(
+                "DỊCH",
+                style: TextStyle(
+                  fontWeight: FontWeight.w900,
+                  fontSize: 15,
+                ),
+              ),
             ),
             const SizedBox(
               child: Divider(
@@ -326,20 +256,19 @@ class _SettingAccountState extends State<SettingAccount> {
               ),
             ),
             ListTile(
-              title: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text("Tự động dịch nguồn Trung"),
-                ],
-              ),
-              trailing: Switch(
-                  value: light,
-                  onChanged: (bool value) {
-                    setState(() {
-                      light = value;
-                    });
-                  })
-            ),
+                title: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: const [
+                    Text("Tự động dịch nguồn Trung"),
+                  ],
+                ),
+                trailing: Switch(
+                    value: light,
+                    onChanged: (bool value) {
+                      setState(() {
+                        light = value;
+                      });
+                    })),
           ],
         ),
       ),
