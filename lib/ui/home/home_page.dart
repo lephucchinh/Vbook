@@ -11,45 +11,27 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.black12,
         elevation: 0,
-        title: Row(children: [
-          InkWell(
+        leading: InkWell(
             onTap: () {},
             child: const CircleAvatar(
               radius: 25,
               backgroundImage: AssetImage("assets/images/8-1626444967.jpg"),
             ),
           ),
-          TextButton(
-            style: ButtonStyle(
-                minimumSize: MaterialStateProperty.all<Size>(Size(
-                    MediaQuery.of(context).size.width * 0.08,
-                    MediaQuery.of(context).size.height * 0.1))),
-            onPressed: () {},
-            child: const Text(
-              'Kệ sách',
-              style: TextStyle(
-                color: Colors.black,
-                fontSize: 18,
-                fontWeight: FontWeight.w900,
-              ),
+        title: Row(
+          children: [
+            TextButton(
+                onPressed: () {},
+                child: const Text("Kệ sách",style: TextStyle(color: Colors.black),)
             ),
-          ),
-          TextButton(
-            style: ButtonStyle(
-                minimumSize: MaterialStateProperty.all<Size>(Size(
-                    MediaQuery.of(context).size.width * 0.08,
-                    MediaQuery.of(context).size.height * 0.1))),
-            onPressed: () {},
-            child: const Text(
-              'Lịch sử',
-              style: TextStyle(
-                color: Colors.black,
-                fontSize: 18,
-                fontWeight: FontWeight.w900,
-              ),
+            TextButton(
+                onPressed: () {},
+                child: const Text("Lịch sử",style: TextStyle(color: Colors.black),)
             ),
-          ),
-        ]),
+          ],
+        ),
+
+
         actions: <Widget>[
           IconButton(
             icon: const Icon(Icons.search_outlined),
