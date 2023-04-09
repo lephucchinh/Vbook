@@ -7,72 +7,79 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.black12,
-        elevation: 0,
-        leading: InkWell(
-            onTap: () {},
-            child: const CircleAvatar(
-              radius: 25,
-              backgroundImage: AssetImage("assets/images/8-1626444967.jpg"),
+    return DefaultTabController(
+      length: 2,
+      child: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.black12,
+          elevation: 0,
+          leading: InkWell(
+              onTap: () {},
+              child: const CircleAvatar(
+                radius: 25,
+                backgroundImage: AssetImage("assets/images/8-1626444967.jpg"),
+              ),
             ),
+          title: const TabBar(
+            tabs: [
+              Tab(
+                  child: const Text("Kệ sách",style: TextStyle(color: Colors.black),)
+              ),
+              Tab(
+                  child: const Text("Lịch sử",style: TextStyle(color: Colors.black),)
+              ),
+            ],
           ),
-        title: Row(
-          children: [
-            TextButton(
-                onPressed: () {},
-                child: const Text("Kệ sách",style: TextStyle(color: Colors.black),)
+
+
+          actions: <Widget>[
+            IconButton(
+              icon: const Icon(Icons.search_outlined),
+              color: Colors.black,
+              onPressed: () {},
             ),
-            TextButton(
-                onPressed: () {},
-                child: const Text("Lịch sử",style: TextStyle(color: Colors.black),)
+            IconButton(
+              icon: const Icon(Icons.settings),
+              color: Colors.black,
+              onPressed: () {},
             ),
           ],
         ),
+        body: const TabBarView(
+            children: [
+               HomeBody(),
+              Center(),
+            ],
 
-
-        actions: <Widget>[
-          IconButton(
-            icon: const Icon(Icons.search_outlined),
-            color: Colors.black,
-            onPressed: () {},
-          ),
-          IconButton(
-            icon: const Icon(Icons.settings),
-            color: Colors.black,
-            onPressed: () {},
-          ),
-        ],
-      ),
-      body: const HomeBody(),
-      bottomNavigationBar: NavigationBar(
-        onDestinationSelected: (index) {
-          if (index == 3) {
-            // Navigator.push(
-            //   context,
-            //   MaterialPageRoute(builder: (context) => const SettingPage()),
-            // );
-          }
-        },
-        destinations: const [
-          NavigationDestination(
-            icon: Icon(Icons.home_outlined),
-            label: 'Kệ sách',
-          ),
-          NavigationDestination(
-            icon: Icon(Icons.list_alt_outlined),
-            label: 'Khám phá',
-          ),
-          NavigationDestination(
-            icon: Icon(Icons.comment_outlined),
-            label: 'Bàn luận',
-          ),
-          NavigationDestination(
-            icon: Icon(Icons.person_outline),
-            label: 'Cá nhân',
-          ),
-        ],
+        ),
+        bottomNavigationBar: NavigationBar(
+          onDestinationSelected: (index) {
+            if (index == 3) {
+              // Navigator.push(
+              //   context,
+              //   MaterialPageRoute(builder: (context) => const SettingPage()),
+              // );
+            }
+          },
+          destinations: const [
+            NavigationDestination(
+              icon: Icon(Icons.home_outlined),
+              label: 'Kệ sách',
+            ),
+            NavigationDestination(
+              icon: Icon(Icons.list_alt_outlined),
+              label: 'Khám phá',
+            ),
+            NavigationDestination(
+              icon: Icon(Icons.comment_outlined),
+              label: 'Bàn luận',
+            ),
+            NavigationDestination(
+              icon: Icon(Icons.person_outline),
+              label: 'Cá nhân',
+            ),
+          ],
+        ),
       ),
     );
   }
