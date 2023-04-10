@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class myColors {
+class colorsUsing {
 
   static const List<Color> colors = [
     Colors.grey,

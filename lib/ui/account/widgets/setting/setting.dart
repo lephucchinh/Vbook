@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:vbook/utils/colors.dart';
+import 'package:vbook/utils/colors_using.dart';
 
 class SettingAccount extends StatefulWidget {
   const SettingAccount({Key? key}) : super(key: key);
@@ -61,13 +61,13 @@ class _SettingAccountState extends State<SettingAccount> {
                 height: 70,
                 child: ListView.separated(
                   scrollDirection: Axis.horizontal,
-                  itemCount: myColors.colors.length,
+                  itemCount: colorsUsing.colors.length,
                   itemBuilder: (context, index) => ElevatedButton(
                     child: selectedColor == index
                         ? Icon(Icons.check_box_outlined)
                         : SizedBox.shrink(),
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: myColors.colors[index],
+                      backgroundColor: colorsUsing.colors[index],
                       shape: CircleBorder(),
                     ),
                     onPressed: () {
