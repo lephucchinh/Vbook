@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../account/account_page.dart';
-import 'widgets/home_body.dart';
+import 'widgets/home_body/home_body.dart';
+import 'widgets/home_history/home_history.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -48,7 +49,7 @@ class HomePage extends StatelessWidget {
         body: const TabBarView(
             children: [
                HomeBody(),
-              Center(),
+               homeHistory(),
             ],
 
         ),

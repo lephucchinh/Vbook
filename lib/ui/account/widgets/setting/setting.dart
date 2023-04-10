@@ -10,7 +10,6 @@ class SettingAccount extends StatefulWidget {
 }
 
 class _SettingAccountState extends State<SettingAccount> {
-
   int selectedColor = 0;
 
   @override
@@ -39,14 +38,12 @@ class _SettingAccountState extends State<SettingAccount> {
                 ),
               ),
             ),
-            const SizedBox(
-              child: Divider(
-                height: 1,
-                thickness: 2,
-                indent: 17,
-                endIndent: 380,
-                color: Colors.black,
-              ),
+            const Divider(
+              height: 1,
+              thickness: 2,
+              indent: 17,
+              endIndent: 380,
+              color: Colors.black,
             ),
             const ListTile(
               title: Text(
@@ -78,6 +75,7 @@ class _SettingAccountState extends State<SettingAccount> {
                   ),
                   separatorBuilder: (context, index) => SizedBox(width: 5),
                 )),
+            const Divider(),
             ListTile(
               title: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -91,6 +89,7 @@ class _SettingAccountState extends State<SettingAccount> {
               ),
               trailing: const Icon(Icons.navigate_next),
             ),
+            const Divider(),
             ListTile(
               title: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -104,6 +103,7 @@ class _SettingAccountState extends State<SettingAccount> {
               ),
               trailing: const Icon(Icons.navigate_next),
             ),
+            const Divider(),
             ListTile(
               title: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -117,6 +117,7 @@ class _SettingAccountState extends State<SettingAccount> {
               ),
               trailing: const Icon(Icons.navigate_next),
             ),
+            const Divider(),
             ListTile(
                 title: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -131,6 +132,7 @@ class _SettingAccountState extends State<SettingAccount> {
                         light = value;
                       });
                     })),
+            const Divider(),
             ListTile(
               title: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -144,6 +146,7 @@ class _SettingAccountState extends State<SettingAccount> {
               ),
               trailing: const Icon(Icons.navigate_next),
             ),
+            const Divider(),
             ListTile(
               title: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -159,6 +162,7 @@ class _SettingAccountState extends State<SettingAccount> {
                     });
                   }),
             ),
+            const Divider(),
             const ListTile(
               title: Text(
                 "KẾT NỐI",
@@ -168,14 +172,12 @@ class _SettingAccountState extends State<SettingAccount> {
                 ),
               ),
             ),
-            const SizedBox(
-              child: Divider(
-                height: 1,
-                thickness: 2,
-                indent: 17,
-                endIndent: 375,
-                color: Colors.black,
-              ),
+            const Divider(
+              height: 1,
+              thickness: 2,
+              indent: 17,
+              endIndent: 375,
+              color: Colors.black,
             ),
             ListTile(
               title: Row(
@@ -190,6 +192,7 @@ class _SettingAccountState extends State<SettingAccount> {
               ),
               trailing: const Icon(Icons.navigate_next),
             ),
+            const Divider(),
             ListTile(
               title: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -203,6 +206,7 @@ class _SettingAccountState extends State<SettingAccount> {
               ),
               trailing: const Icon(Icons.navigate_next),
             ),
+            const Divider(),
             ListTile(
               title: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -216,6 +220,7 @@ class _SettingAccountState extends State<SettingAccount> {
               ),
               trailing: const Icon(Icons.navigate_next),
             ),
+            const Divider(),
             ListTile(
               title: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -229,6 +234,7 @@ class _SettingAccountState extends State<SettingAccount> {
               ),
               trailing: const Icon(Icons.navigate_next),
             ),
+            const Divider(),
             const ListTile(
               title: Text(
                 "DỊCH",
@@ -238,14 +244,12 @@ class _SettingAccountState extends State<SettingAccount> {
                 ),
               ),
             ),
-            const SizedBox(
-              child: Divider(
-                height: 1,
-                thickness: 2,
-                indent: 17,
-                endIndent: 395,
-                color: Colors.black,
-              ),
+            const Divider(
+              height: 1,
+              thickness: 2,
+              indent: 17,
+              endIndent: 395,
+              color: Colors.black,
             ),
             ListTile(
                 title: Row(
@@ -261,6 +265,7 @@ class _SettingAccountState extends State<SettingAccount> {
                         light = value;
                       });
                     })),
+            const Divider(),
           ],
         ),
       ),
