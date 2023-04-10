@@ -11,7 +11,7 @@ class HomeBody extends StatelessWidget {
       mainAxisSpacing: 30,
       crossAxisSpacing: 10,
       crossAxisCount: 3,
-      childAspectRatio: 7 / 12,
+      childAspectRatio: 1 / 2,
       children: [
         GestureDetector(
           onTap: () {},

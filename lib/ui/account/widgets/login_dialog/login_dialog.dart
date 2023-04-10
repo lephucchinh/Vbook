@@ -63,7 +63,6 @@ class LoginDialog extends StatelessWidget {
                     ),
                   ],
                 ),
-                const SizedBox(height: 20),
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.deepPurple,
