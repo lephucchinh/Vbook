@@ -89,201 +89,83 @@ class AccountPage extends StatelessWidget {
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.043,
                 ),
-                Container(
-                  decoration: const BoxDecoration(color: Colors.black12),
-                  width: MediaQuery.of(context).size.width * 1,
-                  child: const ListTile(
-                    title: Text(
-                      'Ứng dụng',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.w700,
-                      ),
+                 ListTile(
+                  tileColor: Colors.grey,
+                  leading: Text(
+                    'Ứng dụng',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.w700,
                     ),
+                  ),
+                ),
+                 ListTile(
+                  leading: Icon(
+                  Icons.library_books_outlined,
+                  color: Colors.black,
+                ),
+                  title: Text("Lưu trữ"),
+                ),
+                 ListTile(
+                  leading: Icon(
+                    Icons.insert_chart_outlined,
+                    color: Colors.black,
+                  ),
+                  title: Text("Thống kê"),
+                ),
+                 ListTile(
+                  leading: Icon(
+                    Icons.pie_chart_outline,
+                    color: Colors.black,
+                  ),
+                  title: Text("Phần mở rộng"),
+                ),
+                 ListTile(
+                  leading: Icon(
+                    Icons.settings_backup_restore,
+                    color: Colors.black,
+                  ),
+                  title: Text("Đồng bộ & sao lưu"),
+                ),
+                ListTile(
+                  onTap: () {
+                    Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => SettingAccount()),
+                  );},
+                  leading: Icon(
+                    Icons.settings_outlined,
+                    color: Colors.black,
+                  ),
+                  title: Text("Cài đặt"),
+                ),
+                const ListTile(
+                  tileColor: Colors.grey,
+                  leading: Text(
+                    "Kết nối",
+                    style: TextStyle(
+                        fontWeight: FontWeight.w700, color: Colors.black),
                   ),
                 ),
                 ListTile(
-                  title: TextButton.icon(
-                    onPressed: () {},
-                    icon: Icon(
-                      Icons.library_books_outlined,
-                      color: Colors.black,
-                      size: MediaQuery.of(context).size.width * 0.04,
-                    ),
-                    label: Padding(
-                      padding: EdgeInsets.only(
-                          right: MediaQuery.of(context).size.width * 0.61),
-                      child: Text(
-                        "Lưu trữ",
-                        style: TextStyle(
-                            color: Colors.black,
-                            fontSize: MediaQuery.of(context).size.width * 0.04,
-                            fontWeight: FontWeight.w400),
-                      ),
-                    ),
+                  leading: Icon(
+                    Icons.link_outlined,
+                    color: Colors.black,
                   ),
+                  title: Text("Mời bạn bè sử dụng"),
                 ),
                 ListTile(
-                  title: TextButton.icon(
-                    onPressed: () {},
-                    icon: Icon(
-                      Icons.insert_chart_outlined,
-                      color: Colors.black,
-                      size: MediaQuery.of(context).size.width * 0.04,
-                    ),
-                    label: Padding(
-                      padding: EdgeInsets.only(
-                          right: MediaQuery.of(context).size.width * 0.58),
-                      child: Text(
-                        "Thống kê",
-                        style: TextStyle(
-                            color: Colors.black,
-                            fontSize: MediaQuery.of(context).size.width * 0.04,
-                            fontWeight: FontWeight.w400),
-                      ),
-                    ),
+                  leading: Icon(
+                    Icons.facebook,
+                    color: Colors.black,
                   ),
+                  title: Text("Theo rõi fanpage"),
                 ),
                 ListTile(
-                  title: TextButton.icon(
-                    onPressed: () {},
-                    icon: Icon(
-                      Icons.pie_chart_outline,
-                      color: Colors.black,
-                      size: MediaQuery.of(context).size.width * 0.04,
-                    ),
-                    label: Padding(
-                      padding: EdgeInsets.only(
-                          right: MediaQuery.of(context).size.width * 0.505),
-                      child: Text(
-                        "Phần mở rộng",
-                        style: TextStyle(
-                            color: Colors.black,
-                            fontSize: MediaQuery.of(context).size.width * 0.04,
-                            fontWeight: FontWeight.w400),
-                      ),
-                    ),
+                  leading: Icon(
+                    Icons.discord,
+                    color: Colors.black,
                   ),
-                ),
-                ListTile(
-                  title: TextButton.icon(
-                    onPressed: () {},
-                    icon: Icon(
-                      Icons.settings_backup_restore,
-                      color: Colors.black,
-                      size: MediaQuery.of(context).size.width * 0.04,
-                    ),
-                    label: Padding(
-                      padding: EdgeInsets.only(
-                          right: MediaQuery.of(context).size.width * 0.434),
-                      child: Text(
-                        "Đồng bộ & sao lưu",
-                        style: TextStyle(
-                            color: Colors.black,
-                            fontSize: MediaQuery.of(context).size.width * 0.04,
-                            fontWeight: FontWeight.w400),
-                      ),
-                    ),
-                  ),
-                ),
-                ListTile(
-                  title: TextButton.icon(
-                    onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => SettingAccount()),
-                      );
-                    },
-                    icon: Icon(
-                      Icons.settings_outlined,
-                      color: Colors.black,
-                      size: MediaQuery.of(context).size.width * 0.04,
-                    ),
-                    label: Padding(
-                      padding: EdgeInsets.only(
-                          right: MediaQuery.of(context).size.width * 0.62),
-                      child: Text(
-                        "Cài đặt",
-                        style: TextStyle(
-                            color: Colors.black,
-                            fontSize: MediaQuery.of(context).size.width * 0.04,
-                            fontWeight: FontWeight.w400),
-                      ),
-                    ),
-                  ),
-                ),
-                Container(
-                  decoration: const BoxDecoration(color: Colors.black12),
-                  width: MediaQuery.of(context).size.width * 1,
-                  child: const ListTile(
-                    title: Text(
-                      "Kết nối",
-                      style: TextStyle(
-                          fontWeight: FontWeight.w700, color: Colors.black),
-                    ),
-                  ),
-                ),
-                ListTile(
-                  title: TextButton.icon(
-                    onPressed: () {},
-                    icon: Icon(
-                      Icons.link_outlined,
-                      color: Colors.black,
-                      size: MediaQuery.of(context).size.width * 0.04,
-                    ),
-                    label: Padding(
-                      padding: EdgeInsets.only(
-                          right: MediaQuery.of(context).size.width * 0.42),
-                      child: Text(
-                        "Mời bạn bè sử dụng",
-                        style: TextStyle(
-                            color: Colors.black,
-                            fontSize: MediaQuery.of(context).size.width * 0.04,
-                            fontWeight: FontWeight.w400),
-                      ),
-                    ),
-                  ),
-                ),
-                ListTile(
-                  title: TextButton.icon(
-                    onPressed: () {},
-                    icon: Icon(
-                      Icons.facebook,
-                      color: Colors.black,
-                      size: MediaQuery.of(context).size.width * 0.04,
-                    ),
-                    label: Padding(
-                      padding: EdgeInsets.only(
-                          right: MediaQuery.of(context).size.width * 0.48),
-                      child: Text(
-                        "Theo rõi fanpage",
-                        style: TextStyle(
-                            color: Colors.black,
-                            fontSize: MediaQuery.of(context).size.width * 0.04,
-                            fontWeight: FontWeight.w400),
-                      ),
-                    ),
-                  ),
-                ),
-                ListTile(
-                  title: TextButton.icon(
-                    onPressed: () {},
-                    icon: Icon(
-                      Icons.discord,
-                      color: Colors.black,
-                      size: MediaQuery.of(context).size.width * 0.04,
-                    ),
-                    label: Padding(
-                      padding: EdgeInsets.only(
-                          right: MediaQuery.of(context).size.width * 0.47),
-                      child: Text(
-                        "Tham gia discord",
-                        style: TextStyle(
-                            color: Colors.black,
-                            fontSize: MediaQuery.of(context).size.width * 0.04,
-                            fontWeight: FontWeight.w400),
-                      ),
-                    ),
-                  ),
+                  title: Text("Tham gia discord"),
                 ),
               ],
             ),
