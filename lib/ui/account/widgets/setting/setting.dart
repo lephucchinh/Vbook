@@ -77,54 +77,37 @@ class _SettingAccountState extends State<SettingAccount> {
                 )),
             const Divider(),
             ListTile(
-              title: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
-                  Text("Chủ đề tối"),
-                  Text(
-                    "Tối",
-                    style: TextStyle(fontSize: 12),
-                  ),
-                ],
+              leading: Text("Chủ đề tối"),
+              title: Text(
+                "Tối",
+                style: TextStyle(fontSize: 12),
+                textAlign: TextAlign.end,
               ),
               trailing: const Icon(Icons.navigate_next),
             ),
             const Divider(),
             ListTile(
-              title: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
-                  Text("Ngôn ngữ"),
-                  Text(
-                    "Theo hệ thống",
-                    style: TextStyle(fontSize: 12),
-                  ),
-                ],
+              leading: Text("Ngôn ngữ"),
+              title: Text(
+                "Theo hệ thống",
+                style: TextStyle(fontSize: 12),
+                textAlign: TextAlign.end,
               ),
               trailing: const Icon(Icons.navigate_next),
             ),
             const Divider(),
             ListTile(
-              title: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
-                  Text("Phông chữ"),
-                  Text(
-                    "Nunito",
-                    style: TextStyle(fontSize: 12),
-                  ),
-                ],
+              leading: Text("Phông chữ"),
+              title: Text(
+                "Nunito",
+                style: TextStyle(fontSize: 12),
+                textAlign: TextAlign.end,
               ),
               trailing: const Icon(Icons.navigate_next),
             ),
             const Divider(),
             ListTile(
-                title: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: const [
-                    Text("Tự động mở truyện vừa đọc"),
-                  ],
-                ),
+                leading: Text("Tự động mở truyện vừa đọc"),
                 trailing: Switch(
                     value: light,
                     onChanged: (bool value) {
@@ -134,26 +117,17 @@ class _SettingAccountState extends State<SettingAccount> {
                     })),
             const Divider(),
             ListTile(
-              title: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
-                  Text("Cập nhật chương mới"),
-                  Text(
-                    "không kiểm tra",
-                    style: TextStyle(fontSize: 12),
-                  ),
-                ],
+              leading: Text("Cập nhật chương mới"),
+              title: Text(
+                "không kiểm tra",
+                style: TextStyle(fontSize: 12),
+                textAlign: TextAlign.end,
               ),
               trailing: const Icon(Icons.navigate_next),
             ),
             const Divider(),
             ListTile(
-              title: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
-                  Text("Làm mờ ảnh bìa truyện nsfw"),
-                ],
-              ),
+              leading: Text("Làm mờ ảnh bìa truyện nsfw"),
               trailing: Switch(
                   value: light,
                   onChanged: (bool value) {
@@ -180,57 +154,41 @@ class _SettingAccountState extends State<SettingAccount> {
               color: Colors.black,
             ),
             ListTile(
-              title: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
-                  Text("Thời gian nghỉ"),
-                  Text(
-                    "100ms",
-                    style: TextStyle(fontSize: 12),
-                  ),
-                ],
+              leading: Text("Thời gian nghỉ"),
+              title: Text(
+                "100ms",
+                style: TextStyle(fontSize: 12),
+                textAlign: TextAlign.end,
               ),
               trailing: const Icon(Icons.navigate_next),
             ),
             const Divider(),
             ListTile(
-              title: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
-                  Text("Số luồng tải xuống"),
-                  Text(
-                    "2 luồng",
-                    style: TextStyle(fontSize: 12),
-                  ),
-                ],
+              leading: Text("Số luồng tải xuống"),
+              title: Text(
+                "2 luồng",
+                style: TextStyle(fontSize: 12),
+                textAlign: TextAlign.end,
               ),
               trailing: const Icon(Icons.navigate_next),
             ),
             const Divider(),
             ListTile(
-              title: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
-                  Text("Tải lại khi bị lỗi"),
-                  Text(
-                    "3",
-                    style: TextStyle(fontSize: 12),
-                  ),
-                ],
+              leading: Text("Tải lại khi bị lỗi"),
+              title: Text(
+                "3",
+                style: TextStyle(fontSize: 12),
+                textAlign: TextAlign.end,
               ),
               trailing: const Icon(Icons.navigate_next),
             ),
             const Divider(),
             ListTile(
-              title: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
-                  Text("DNS over HTTPS"),
-                  Text(
-                    "không",
-                    style: TextStyle(fontSize: 12),
-                  ),
-                ],
+              leading: Text("DNS over HTTPS"),
+              title: Text(
+                "không",
+                style: TextStyle(fontSize: 12),
+                textAlign: TextAlign.end,
               ),
               trailing: const Icon(Icons.navigate_next),
             ),
@@ -252,12 +210,7 @@ class _SettingAccountState extends State<SettingAccount> {
               color: Colors.black,
             ),
             ListTile(
-                title: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: const [
-                    Text("Tự động dịch nguồn Trung"),
-                  ],
-                ),
+                title: Text("Tự động dịch nguồn Trung",textAlign: TextAlign.start,),
                 trailing: Switch(
                     value: light,
                     onChanged: (bool value) {
