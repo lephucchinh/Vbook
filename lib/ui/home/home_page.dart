@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../account/account_page.dart';
+import 'widgets/gridView_dimenstion/gridview_dimenstion.dart';
 import 'widgets/home_body/home_body.dart';
 import 'widgets/home_history/home_history.dart';
 
@@ -42,7 +43,14 @@ class HomePage extends StatelessWidget {
             IconButton(
               icon: const Icon(Icons.settings),
               color: Colors.black,
-              onPressed: () {},
+              onPressed: () {
+                showModalBottomSheet(
+                    context: context,
+                    builder: (BuildContext context) {
+                       return gridViewDimenstion();
+                    }
+                );
+              },
             ),
           ],
         ),
