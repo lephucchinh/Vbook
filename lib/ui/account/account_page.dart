@@ -17,6 +17,10 @@ class AccountPage extends StatelessWidget {
           appBar: AppBar(
             backgroundColor: Colors.white,
             elevation: 0,
+            leading: IconButton(
+                onPressed: () => Navigator.pop(context),
+                icon: Icon(Icons.arrow_back_ios_new,color: Colors.black87,)
+            ),
             title: Text(
               "Cá nhân",
               style: TextStyle(

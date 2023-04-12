@@ -20,6 +20,10 @@ class _SettingAccountState extends State<SettingAccount> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
+        leading: IconButton(
+            onPressed: () => Navigator.pop(context),
+            icon: Icon(Icons.arrow_back_ios_new,color: Colors.black87,)
+        ),
         title: const Text(
           "Cài đặt",
           style: TextStyle(
@@ -210,7 +214,10 @@ class _SettingAccountState extends State<SettingAccount> {
               color: Colors.black,
             ),
             ListTile(
-                title: Text("Tự động dịch nguồn Trung",textAlign: TextAlign.start,),
+                title: Text(
+                  "Tự động dịch nguồn Trung",
+                  textAlign: TextAlign.start,
+                ),
                 trailing: Switch(
                     value: light,
                     onChanged: (bool value) {

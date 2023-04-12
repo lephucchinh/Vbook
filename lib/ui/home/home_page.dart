@@ -17,23 +17,25 @@ class HomePage extends StatelessWidget {
           backgroundColor: Colors.black12,
           elevation: 0,
           leading: IconButton(
-              onPressed: () {},
-              icon: const CircleAvatar(
-                backgroundImage: AssetImage("assets/images/8-1626444967.jpg"),
-              ),
+            onPressed: () {},
+            icon: const CircleAvatar(
+              backgroundImage: AssetImage("assets/images/8-1626444967.jpg"),
             ),
+          ),
           title: const TabBar(
             tabs: [
               Tab(
-                  child: Text("Kệ sách",style: TextStyle(color: Colors.black),)
-              ),
+                  child: Text(
+                "Kệ sách",
+                style: TextStyle(color: Colors.black),
+              )),
               Tab(
-                  child: Text("Lịch sử",style: TextStyle(color: Colors.black),)
-              ),
+                  child: Text(
+                "Lịch sử",
+                style: TextStyle(color: Colors.black),
+              )),
             ],
           ),
-
-
           actions: <Widget>[
             IconButton(
               icon: const Icon(Icons.search_outlined),
@@ -47,33 +49,32 @@ class HomePage extends StatelessWidget {
                 showModalBottomSheet(
                     isScrollControlled: true,
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+                      borderRadius:
+                          BorderRadius.vertical(top: Radius.circular(20)),
                     ),
                     context: context,
                     constraints: const BoxConstraints(
                       maxWidth: 350,
                     ),
                     builder: (BuildContext context) {
-                       return gridViewDimenstion();
-                    }
-                );
+                      return gridViewDimenstion();
+                    });
               },
             ),
           ],
         ),
         body: const TabBarView(
-            children: [
-               HomeBody(),
-               homeHistory(),
-            ],
-
+          children: [
+            HomeBody(),
+            homeHistory(),
+          ],
         ),
         bottomNavigationBar: NavigationBar(
           onDestinationSelected: (index) {
             if (index == 3) {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) =>  const AccountPage()),
+                MaterialPageRoute(builder: (context) => const AccountPage()),
               );
             }
           },
