@@ -1,20 +1,29 @@
 import 'package:flutter/material.dart';
 
+import 'package:vbook/utils/colors_using.dart';
 import '../account/account_page.dart';
 import 'widgets/gridView_dimenstion/gridview_dimenstion.dart';
 import 'widgets/home_body/home_body.dart';
 import 'widgets/home_history/home_history.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
   @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+
+  @override
+
+
   Widget build(BuildContext context) {
     return DefaultTabController(
       length: 2,
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.black12,
+          backgroundColor: colorsUsing.colors[2],
           elevation: 0,
           leading: IconButton(
             onPressed: () {},

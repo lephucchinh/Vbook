@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:vbook/ui/account/widgets/setting/bloc/setting_bloc.dart';
 import 'package:vbook/utils/colors_using.dart';
 
 class SettingAccount extends StatefulWidget {
@@ -22,8 +24,10 @@ class _SettingAccountState extends State<SettingAccount> {
         elevation: 0,
         leading: IconButton(
             onPressed: () => Navigator.pop(context),
-            icon: Icon(Icons.arrow_back_ios_new,color: Colors.black87,)
-        ),
+            icon: Icon(
+              Icons.arrow_back_ios_new,
+              color: Colors.black87,
+            )),
         title: const Text(
           "Cài đặt",
           style: TextStyle(
@@ -58,27 +62,37 @@ class _SettingAccountState extends State<SettingAccount> {
                     fontSize: 15),
               ),
             ),
-            Container(
-                height: 70,
-                child: ListView.separated(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: colorsUsing.colors.length,
-                  itemBuilder: (context, index) => ElevatedButton(
-                    child: selectedColor == index
-                        ? Icon(Icons.check_box_outlined)
-                        : SizedBox.shrink(),
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: colorsUsing.colors[index],
-                      shape: CircleBorder(),
-                    ),
-                    onPressed: () {
-                      setState(() {
-                        selectedColor = index;
-                      });
-                    },
-                  ),
-                  separatorBuilder: (context, index) => SizedBox(width: 5),
-                )),
+            BlocProvider(
+              create: (context) => SettingBloc(),
+              child: BlocBuilder<SettingBloc, SettingState>(
+                builder: (context, state) {
+                  return Container(
+                      height: 70,
+                      child: ListView.separated(
+                        scrollDirection: Axis.horizontal,
+                        itemCount: colorsUsing.colors.length,
+                        itemBuilder: (context, index) => ElevatedButton(
+                          child: selectedColor == index
+                              ? Icon(Icons.check_box_outlined)
+                              : SizedBox.shrink(),
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: colorsUsing.colors[index],
+                            shape: CircleBorder(),
+                          ),
+                          onPressed: () {
+                            setState(() {
+                              selectedColor = index;
+                              context.read<SettingBloc>().add(
+                                  ColorButtonPressed(context, index: index));
+                            });
+                          },
+                        ),
+                        separatorBuilder: (context, index) =>
+                            SizedBox(width: 5),
+                      ));
+                },
+              ),
+            ),
             const Divider(),
             ListTile(
               leading: Text("Chủ đề tối"),
