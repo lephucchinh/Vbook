@@ -51,7 +51,7 @@ class HomePage extends StatelessWidget {
                     ),
                     context: context,
                     constraints: const BoxConstraints(
-                      maxWidth: 400,
+                      maxWidth: 350,
                     ),
                     builder: (BuildContext context) {
                        return gridViewDimenstion();
