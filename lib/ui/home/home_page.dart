@@ -47,11 +47,8 @@ class HomePage extends StatelessWidget {
               color: Colors.black,
               onPressed: () {
                 showModalBottomSheet(
+                    backgroundColor: Colors.transparent,
                     isScrollControlled: true,
-                    shape: RoundedRectangleBorder(
-                      borderRadius:
-                          BorderRadius.vertical(top: Radius.circular(20)),
-                    ),
                     context: context,
                     constraints: const BoxConstraints(
                       maxWidth: 350,
