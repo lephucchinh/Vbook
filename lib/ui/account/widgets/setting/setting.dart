@@ -70,20 +70,24 @@ class _SettingAccountState extends State<SettingAccount> {
                       height: 70,
                       child: ListView.separated(
                         scrollDirection: Axis.horizontal,
-                        itemCount: colorsUsing.colors.length,
+                        itemCount: ColorsUsing.colors.length,
                         itemBuilder: (context, index) => ElevatedButton(
                           child: selectedColor == index
                               ? Icon(Icons.check_box_outlined)
                               : SizedBox.shrink(),
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: colorsUsing.colors[index],
+                            backgroundColor: ColorsUsing.colors[index],
                             shape: CircleBorder(),
                           ),
                           onPressed: () {
                             setState(() {
                               selectedColor = index;
-                              context.read<SettingBloc>().add(
-                                  ColorButtonPressed(context, index: index));
+                              context
+                                  .read<SettingBloc>()
+                                  .add(ColorButtonPressed(
+                                    context,
+                                     index: index,
+                                  ));
                             });
                           },
                         ),

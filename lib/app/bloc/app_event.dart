@@ -17,3 +17,12 @@ class AuthChanged extends AppEvent {
   @override
   List<Object?> get props => [isLogin];
 }
+
+class ColorBackgroudChanged extends AppEvent {
+
+  late final int index;
+
+  ColorBackgroudChanged(int index);
+  @override
+  List<Object?> get props => [index];
+}

@@ -19,7 +19,7 @@ class SettingState extends Equatable {
   }) {
     return SettingState._(
         status: status ?? this.status,
-        selectedColor: selectedColor ?? this.selectedColor,
+      selectedColor: selectedColor ?? this.selectedColor,
     );
   }
 
