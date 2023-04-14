@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class ColorsUsing {
 
-  static const List<Color> colors = [
+  static const List<Color> colorList = [
     Colors.grey,
     Colors.white,
     Colors.red,

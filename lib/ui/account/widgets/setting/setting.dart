@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:vbook/app/bloc/app_bloc.dart';
 import 'package:vbook/ui/account/widgets/setting/bloc/setting_bloc.dart';
 import 'package:vbook/utils/colors_using.dart';
 
@@ -70,24 +71,26 @@ class _SettingAccountState extends State<SettingAccount> {
                       height: 70,
                       child: ListView.separated(
                         scrollDirection: Axis.horizontal,
-                        itemCount: ColorsUsing.colors.length,
+                        itemCount: ColorsUsing.colorList.length,
                         itemBuilder: (context, index) => ElevatedButton(
                           child: selectedColor == index
                               ? Icon(Icons.check_box_outlined)
                               : SizedBox.shrink(),
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: ColorsUsing.colors[index],
+                            backgroundColor: ColorsUsing.colorList[index],
                             shape: CircleBorder(),
                           ),
                           onPressed: () {
                             setState(() {
                               selectedColor = index;
+
                               context
                                   .read<SettingBloc>()
                                   .add(ColorButtonPressed(
                                     context,
                                      index: index,
                                   ));
+                              context.read<AppBloc>().add(ColorBackGroundChanged(index));
                             });
                           },
                         ),

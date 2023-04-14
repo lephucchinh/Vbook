@@ -1,4 +1,4 @@
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:vbook/common/enum/common_status.dart';
@@ -13,12 +13,14 @@ class AppBloc extends Bloc<AppEvent, AppState> {
   AppBloc() : super(const AppState.initial()) {
     on<AppStated>(_onAppStarted);
     on<AuthChanged>(_onAuthChange);
-    on<ColorBackgroudChanged>(_onColorBackgroudChanged);
+    on<ColorBackGroundChanged>(_onColorBackGroundChanged);
     add(AppStated());
   }
 
   _onAppStarted(AppStated event,Emitter<AppState> emit) {
     final isLogin = Storage.instance().getCurrentLoginStatus;
+    print(state.color.value);
+
     emit(state.copyWith(isLogin: isLogin, status: CommonStatus.loaded));
   }
 
@@ -27,9 +29,11 @@ class AppBloc extends Bloc<AppEvent, AppState> {
     await Storage.instance().setLoginStatus(event.isLogin);
     emit(state.copyWith(isLogin: event.isLogin, status: CommonStatus.loaded));
   }
-  _onColorBackgroudChanged(ColorBackgroudChanged event, Emitter<AppState> emit) async {
-
-
+  _onColorBackGroundChanged(ColorBackGroundChanged event, Emitter<AppState> emit)  {
+    print(state.color.value);
+    emit(state.copyWith(color: ColorsUsing.colorList[event.index]));
+    print(state.color.value);
+    print(event.index);
   }
 
 }
