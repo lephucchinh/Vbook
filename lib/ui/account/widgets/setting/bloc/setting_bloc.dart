@@ -13,7 +13,7 @@ class SettingBloc extends Bloc<SettingEvent, SettingState> {
     on<ColorButtonPressed>(_onColorButtonPressed);
   }
   _onColorButtonPressed(ColorButtonPressed event,Emitter<SettingState> emit) {
-    final int selectedColor = event.index;
+
     event.context.read<AppBloc>().add(ColorBackGroundChanged(event.index));
     emit(state.copyWith(selectedColor: event.index));
   }
