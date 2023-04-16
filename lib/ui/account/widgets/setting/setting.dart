@@ -109,6 +109,30 @@ class _SettingAccountState extends State<SettingAccount> {
                 ),
                 const Divider(),
                 ListTile(
+                  onTap: () {
+                    showMenu(
+                        context: context,
+                        position: RelativeRect.fromLTRB(100, 230, 0, 0),
+                        items: [
+                          PopupMenuItem(
+                          value: 1,
+                            child: Text("theo hệ thống")
+                        ),
+                          PopupMenuItem(
+                              value: 1,
+                              child: Text("tắt")
+                          ),
+                          PopupMenuItem(
+                              value: 1,
+                              child: Text("bật ")
+                          ),
+                          PopupMenuItem(
+                              value: 1,
+                              child: Text("tùy chỉnh")
+                          ),
+                        ]
+                    );
+                  },
                   leading: Text("Chủ đề tối"),
                   title: Text(
                     "Tối",

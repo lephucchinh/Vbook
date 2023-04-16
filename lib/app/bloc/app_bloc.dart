@@ -19,9 +19,11 @@ class AppBloc extends Bloc<AppEvent, AppState> {
 
   _onAppStarted(AppStated event,Emitter<AppState> emit) {
     final isLogin = Storage.instance().getCurrentLoginStatus;
-    print(state.color.value);
+    final colorTheme = Storage.instance().getColorTheme;
 
-    emit(state.copyWith(isLogin: isLogin, status: CommonStatus.loaded));
+
+
+    emit(state.copyWith(color: colorTheme,isLogin: isLogin, status: CommonStatus.loaded));
   }
 
   _onAuthChange(AuthChanged event,Emitter<AppState> emit) async {
@@ -29,11 +31,10 @@ class AppBloc extends Bloc<AppEvent, AppState> {
     await Storage.instance().setLoginStatus(event.isLogin);
     emit(state.copyWith(isLogin: event.isLogin, status: CommonStatus.loaded));
   }
-  _onColorBackGroundChanged(ColorBackGroundChanged event, Emitter<AppState> emit)  {
-    print(state.color.value);
+  _onColorBackGroundChanged(ColorBackGroundChanged event, Emitter<AppState> emit) async {
+
+    await Storage.instance().setColorTheme(ColorsUsing.colorList[event.index]);
     emit(state.copyWith(color: ColorsUsing.colorList[event.index]));
-    print(state.color.value);
-    print(event.index);
   }
 
 }
