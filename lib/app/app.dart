@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:vbook/ui/account/account_page.dart';
-import 'package:vbook/ui/account/widgets/setting/setting.dart';
 import 'package:vbook/ui/home/home_page.dart';
-import 'package:vbook/ui/start/start_page.dart';
 
 import 'bloc/app_bloc.dart';
 

@@ -1,21 +1,29 @@
 part of 'home_page_bloc.dart';
 
 abstract class HomePageEvent extends Equatable {
-  const HomePageEvent(this.context);
-  final BuildContext context;
+  const HomePageEvent();
+
+}
+class DataStated extends HomePageEvent {
+  DataStated();
+
+
+  @override
+  List<Object?> get props => [];
+
 }
 
 class IncreaseColumnPressed extends HomePageEvent {
-  IncreaseColumnPressed(super.context);
-
+  IncreaseColumnPressed(this.context);
+  final BuildContext context;
 
   @override
-  List<Object?> get props => [super.context];
+  List<Object?> get props => [this.context];
 }
 class DicreaseColumnPressed extends HomePageEvent {
-  DicreaseColumnPressed(super.context);
-
+  DicreaseColumnPressed(this.context);
+  final BuildContext context;
 
   @override
-  List<Object?> get props => [super.context];
+  List<Object?> get props => [this.context];
 }

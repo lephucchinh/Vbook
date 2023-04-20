@@ -3,7 +3,7 @@ part of 'home_page_bloc.dart';
 class HomePageState extends Equatable {
   const HomePageState._({required this.column});
 
-  HomePageState.Initial({this.column = 3});
+  const HomePageState.Initial({this.column = 3});
 
   final int column;
 

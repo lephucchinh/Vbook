@@ -22,7 +22,6 @@ class AppBloc extends Bloc<AppEvent, AppState> {
     final colorTheme = Storage.instance().getColorTheme;
 
 
-
     emit(state.copyWith(color: colorTheme,isLogin: isLogin, status: CommonStatus.loaded));
   }
 

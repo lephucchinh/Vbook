@@ -13,10 +13,12 @@ class Storage {
 
   final storage = GetStorage();
 
+  Future setColumnData(int column) => storage.write("columnData", column);
   Future setLoginStatus(bool isLogin) => storage.write('LoginStatus', isLogin);
   Future setColorTheme(Color colorTheme) => storage.write("colorTheme", colorTheme.value);
 
 
+  int get getColumnData => storage.read("columnData") ?? 3;
   bool get getCurrentLoginStatus => storage.read('LoginStatus') ?? false;
   Color? get getColorTheme => Color(storage.read<int>("colorTheme") ?? 0xFFFFFFFF);
 
